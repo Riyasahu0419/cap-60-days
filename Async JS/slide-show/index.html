@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        #container{
+            margin: 10px;
+        }
+
+        button{
+            margin-left: 28% ;
+            width: 10%;
+            height: 50px;
+            border-radius: 10px;
+
+        }
+
+        img{
+            width: 50%;
+            height: 70%;
+            margin-left: 27%;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+   
+    <div id="slideshow-container">
+    <button id="startStopBtn">Start</button>
+
+    <br>
+    <br>
+        
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRn-gVcFRnlD8q2V2mQhqLBrIYWe-OsCCsjkw&s" class="image" alt="">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlDLdxey6GHFVf3TWMvYupgkFHBGFWGf_6uw&s" class="image" alt="">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpFUl6M3r-e3jwkpffR4vZJofibIbRn6MgpA&s" class="image" alt="">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzxjKleypB7MT9P7xPoT5gOAwBcex4oJFDPA&s" class="image" alt="">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSk2vJxFf_lW_GUj9czq0WJnkCEIe_zloVx4Q&s" class="image" alt="">
+        
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1rcs_XvkjaUyusP18Mw2Gm0qKenbA411a9Q&s" class="image" alt="">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR94u0EyhIYQ35WVzV0LSlxZ0Ozv9tMqfzewA&s" class="image" alt="">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThfcWqC1DR0aaFbT-Q8hE732qUmj97DtU8nQ&s" class="image" alt="">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3Soui1IB2Ynk71x1fz1M8DLmLeQrFB-Sz7w&s" class="image" alt="">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9fMC7rTgUuQPuvG4Uz3w5kk79IpDl0r_CiQ&s" class="image" alt="">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkvjU4YPjwggKZFQ6oO9jhPWruiY8SiVmOjw&s" class="image" alt="">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKTezalux1__3KwbJ1Bt-WnQQkW82G1Nwy6g&s" class="image" alt="">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlst33n37g93m8liDygxtpqoPise6krFHX8g&s" class="image" alt="">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMjXG6-2kgAO7WTwnWr7KncS3g5L9ScBn1sQ&s" class="image" alt="">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLlLDsqq-O1jPos1ACOIHZpRJLXd5JXMqjjQ&s" class="image" alt="">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRZjX269STPdAZDPGF1ln0jCWwVYPXGYB6Ow&s" class="image" alt="">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8SkVRRoH8WOENgC4_RqbG1e3p3Z5OnBxIzA&s" class="image" alt="">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMkA0vetbtd5Csathzd_AjzMRkhvN6gpxIGA&s" class="image" alt="">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0CGkdD0u_739pkUx3C97ev4iSwj8slZ-w1g&s" class="image" alt="">
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <!-- <button onclick="pre()">Prevuous</button>
+        <button onclick="Next()">Next</button> -->
+        <button id="prevBtn">Previous</button>
+        <button id="nextBtn">Next</button>
+    </div>
+</body>
+</html>
+<script>
+    // const images = document.getElementsByClassName("image")
+    // let count=0;
+    // images.forEach(
+    //     (slide,index) => {
+    //     slide.style.left = `${index*100}%`
+    // });
+    
+    
+    
+    // function pre(){
+    //     count--
+    //     slideImage()
+    // }
+    
+    
+    // function Next(){
+    //     count++
+    //     slideImage()
+    // }
+    
+    // const slideImage = ()=>{
+    //     images.forEach((slide)=>{
+    //         slide.style.transform = `transalateX(-${count*100}%)`
+    //     })
+    // }
+
+    let slideIndex = 0;
+  let intervalId;
+
+  function showSlides() {
+    const slides = document.getElementsByClassName('image');
+    for (let i = 0; i < slides.length; i++) {
+      slides[i].style.display = 'none';
+    }
+
+    slideIndex++;
+    if (slideIndex > slides.length) {
+      slideIndex = 1;
+    }
+
+    slides[slideIndex - 1].style.display = 'block';
+  }
+
+  function startStopSlides() {
+    if (intervalId) {
+      clearInterval(intervalId);
+      intervalId = null;
+      document.getElementById('startStopBtn').textContent = 'Start';
+    } else {
+      intervalId = setInterval(showSlides, 2000); 
+      document.getElementById('startStopBtn').textContent = 'Stop';
+    }
+  }
+
+  function plusSlides(n) {
+    clearInterval(intervalId);
+    intervalId = null;
+
+    slideIndex += n;
+    if (slideIndex > document.getElementsByClassName('slide').length) {
+      slideIndex = 1;
+    } else if (slideIndex < 1) {
+      slideIndex = document.getElementsByClassName('slide').length;
+    }
+
+    showSlides();
+  }
+
+  document.getElementById('startStopBtn').addEventListener('click', startStopSlides);
+  document.getElementById('prevBtn').addEventListener('click', () => plusSlides(-1));
+  document.getElementById('nextBtn').addEventListener('click', () => plusSlides(1));
+  startStopSlides();
+
+
+</script> 
+
+
