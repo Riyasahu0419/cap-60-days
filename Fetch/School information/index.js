@@ -1,45 +1,5 @@
-// let container = document.getElementById("container")
-
-// let countrydata = async()=>{
-//   try
-//   {
-//         const res = await fetch("https://dbioz2ek0e.execute-api.ap-south-1.amazonaws.com/mockapi/get-countries")
-//         const data = await res.json()
-//         // console.log(data)
-//         fetchdata(data)
-        
-//     }catch(err){
-//         console.log(err)
-//     } 
-    
-// };
-
-// function fetchdata(country){
-//     // country.forEach(function(el){
-
-//         let  divcontainer = document.createElement("div")
-        
-//         let countryname = document.createElement("h3")
-//         countryname.textContent = country.country
-//         divcontainer.append(countryname)
-        
-//         let population = document.createElement("p")
-//         population.textContent = `population ${country.population}`
-//         divcontainer.append(population)
-        
-        
-//         container.append(divcontainer)
-//     // })
-        
-        
-//     }
-    
-//     countrydata()
-
-
-
 const school = {
-    name: "XYZ School",
+    name: "ABC School",
     establishYear: 1990,
     departments: {
       math: { teachers: 5, students: 150 },
@@ -116,7 +76,6 @@ const school = {
       return deptWithHighestCount;
   }
   
-  
   // Problem 14: generateGreeting
   function generateGreeting(name, language = 'English'){
       const greetings = {
@@ -128,12 +87,6 @@ const school = {
       return greetings[language];
   
   }
-  
-  
-  
-  
-  
-  
   
   console.log(countCalculation(school));
   console.log(findTopStudent(school, 'math'));
