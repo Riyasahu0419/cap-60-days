@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<style>
+    nav{
+    }
+    h2{
+        color: azure;
+    }
+    
+    #nav{
+        display: flex;
+        justify-content: space-evenly;
+        background-color: black ;
+    }
+    select{
+        width: 20%;
+        margin: 10px; 
+    }
+    input{
+        width: 20%;
+        padding: 10px;
+        margin: 10px; 
+ }
+
+ #container>div>img{
+    width: 20%;
+    /* background-color: azure; */
+ }
+
+ #container{
+    margin: 10px;
+    display:grid;
+    grid-template-columns: repeat(3,1fr);
+    text-align: center;
+    gap: 10px;
+}
+#container>div{
+    
+    /* border: 1px solid black; */
+    box-shadow: 0px 0px 4px;
+ }
+
+
+</style>
+<body>
+    <nav>
+        <div id="nav">
+
+            <h2>Product Listing Page</h2>
+            <select id="clothing">
+                <option value="">cloths category</option>
+                <option value="">mens clothing</option>
+                <option value="">girls  clothing</option>
+            </select>
+            
+            <input type="text" placeholder="search products...">
+            
+            <select  id="pricing">
+                <option value="">Low-high price</option>
+                <option value="low">Low price</option>
+                <option value="high">high price</option>
+            </select>
+        </div>
+
+        <div id="container">
+
+        </div>
+    </nav>
+</body>
+</html>
+<script src="product.js"></script>
