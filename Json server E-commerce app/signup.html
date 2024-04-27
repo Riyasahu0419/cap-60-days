@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+
+        <h3>Sign-up Page</h3>
+        
+        <input type="text" placeholder="enter user name" id="name">
+        <input type="text" placeholder="Enter user email" id="email">
+        <input type="text" placeholder="enter password" id="password">
+        <button onclick="submit()" value=" ">Sign-up...</button>
+    </div>
+</body>
+
+<script>
+function submit(){
+
+    
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+    let password = document.getElementById("password").value;
+    
+    let user = {name , email , password};
+    //  user to load in the db.json
+    fetch("http://localhost:3000/users",{
+        method:"POST",
+        headers:{
+            "Content-Type":"application/json"
+        },
+        body:JSON.stringify(user)
+        
+    })
+    .then(()=>{
+        console.log("sign-up successfull");
+        alert("sign-up succcessfull , please Login...")
+        window.location.href="login.html"
+    }).catch((err)=>{
+        console.log("error",err)
+    })
+       
+}
+
+</script>
+
+</html>

@@ -7,6 +7,11 @@
     <link rel="stylesheet" href="products.css">
 </head>
 <body>
+    
+    <h2>welcome to products....</h2>
+    <button onclick="logout()">Logout...</button>
+    <br>
+    <br>
     <div id="container"></div>
 </body>
 </html>
@@ -29,21 +34,32 @@
                 let div= document.createElement("div")
                 
                 let title = document.createElement("h3")
-                title.innerText = ele.title
+                title.innerText = `title:- ${ele.title}`
                 title.style.margin="0px"
                 
                 let img = document.createElement("img")
                 img.src = ele.src
                 
                 let  price = document.createElement("p")
-                price.innerText = ele.price
+                price.innerText = `Price:-${ele.price}`
                 price.style.margin="0px"
-                
+            
+                let productid = document.createElement("p")
+                productid.innerText =  `ProductId:- ${ ele.productId}`
+                productid.style.margin="0px"
 
-                // let productid = document.createElement("p")
-                // productid.innerText = ele.productId
-                
-                div.append(img , title , price  )
+                let rating = document.createElement("p")
+                rating.innerText =  `Rating:- ${ ele.ratings}`
+                rating.style.margin="0px"
+
+                let cartbtn = document.createElement("button")
+                cartbtn.textContent="Add to cart"
+                cartbtn.addEventListener("click",function(){})
+            
+                // let deletebtn = document.createElement("button");
+                // deletebtn.textContent="Delete"
+
+                div.append(img ,productid , title , price ,rating ,cartbtn  )
                 container.append(div)
                 
             })
@@ -51,5 +67,25 @@
             
         }
         getdata("http://localhost:3000/products")
+
+function logout(){
+    localStorage.removeItem("login")
+    alert("Loged out...")
+    window.location.href="login.html"
+}
+
+async function cartbtn(el,i){
+    let res = await fetch(" http://localhost:3000/users")
+    let data =  await res.json();
+    fetch("http://localhost:3000/allUsersCart",{
+        method:"POST",
+        headers:{
+            "Content-Type":"application/json"
+        },
+        body:JSON.stringify(data)
+    })
+    console.log(data[login.name])
+       
+}     
         
 </script>
