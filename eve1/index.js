@@ -15,6 +15,8 @@ try {
     showData(Data)
     console.log(response);
 } catch (error) {
+
+
     
 }
 }
@@ -22,15 +24,15 @@ getdata(1)
 
 function showData(data){
     tbody.innerHTML = ""
-    data.map((item)=>{
+    data.map((el)=>{
           
         let tr = document.createElement("tr")
         tr.innerHTML = `
-        <td>${item.id}</td>
-        <td>${item.name}</td>
-        <td>${item.gender}</td>
-        <td>${item.department}</td>
-        <td>${item.salary}</td>
+        <td>${el.id}</td>
+        <td>${el.name}</td>
+        <td>${el.gender}</td>
+        <td>${el.department}</td>
+        <td>${el.salary}</td>
     `
     tbody.append(tr)
     })
