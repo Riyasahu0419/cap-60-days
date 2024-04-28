@@ -1,6 +1,7 @@
 let container = document.getElementById("container")
 let clothcat = document.getElementById("clothing")
 let pricing = document .getElementById("pricing")
+let input = document .getElementById("input")
 let got
 
 
@@ -31,8 +32,9 @@ function fetchdata(arr){
     })
 
 }
+    //    category of cloths
 
-        clothcat.addEventListener("input",function(event){
+clothcat.addEventListener("input",function(event){
             let value =event.target.value
             let get = got.filter(function(el,i){
                 return value==el.category
@@ -40,5 +42,24 @@ function fetchdata(arr){
         
             fetchdata(get)
         })
+
+// searching data from api
+input.addEventListener("change",function(){
+    let value = input.value;
+    if(value!==""){
+
+        let search = got.filter(function(el){
+            return el.title.toLoweCase().includes(value.toLoweCase());
+        })
+        fetchdata(search)
+    }
+
+    else{
+        fetchdata(got)
+    }
+})
+
+
+
         
 getdata("https://fakestoreapi.com/products")
