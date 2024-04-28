@@ -1,21 +1,20 @@
 let container = document.getElementById("container")
 let clothcat = document.getElementById("clothing")
 let pricing = document .getElementById("pricing")
+let got
 
-pricing.addEventListener("change",function(event){
-    let value =event.target.value
-    getdata(`https://fakestoreapi.com/products=${value}`)
-})
 
 let getdata = async(url)=>{
     let res = await fetch(url)
     let data = await res.json()
+    got = data
     // console.log(data)
-    fetchdata(data)
+    fetchdata(got)
 }
 
 function fetchdata(arr){
-    arr.map((el)=>{
+    container.innerHTML=""
+    arr.forEach(function(el){
         let divpro = document.createElement("div")
 
         let img = document.createElement("img")
@@ -26,11 +25,20 @@ function fetchdata(arr){
 
         let  price = document.createElement("h3")
         price.innerText = `price:- ${el.price}`
-
+        
         divpro.append(img,title,price)
         container.append(divpro)
     })
 
 }
 
+        clothcat.addEventListener("input",function(event){
+            let value =event.target.value
+            let get = got.filter(function(el,i){
+                return value==el.category
+            })
+        
+            fetchdata(get)
+        })
+        
 getdata("https://fakestoreapi.com/products")
