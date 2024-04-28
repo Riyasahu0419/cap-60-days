@@ -1,46 +1,93 @@
-let store;
-//  for fetching the data
-async function fetchData(url){
-    const res= await fetch(url)
-    
-    const data=await res.json()
+let Department = document.querySelector("#Department")
+let gender = document.querySelector("#gender")
+let Salary = document.querySelector("#Salary")
+let tbody = document.querySelector("tbody")
+let button = document.querySelectorAll("button")
+let Data = ""
+let Data1 = ""
+let count = 1
 
-    store = data
-    console.log(data)
-    showData(data)
+async function getdata(page="1"){
+try {
+    let res = await fetch(`https://dbioz2ek0e.execute-api.ap-south-1.amazonaws.com/mockapi/get-employees?page=${page}&limit=10`)
+    let response = await res.json()
+    Data = response.data
+    showData(Data)
+    console.log(response);
+} catch (error) {
     
-    // store=finalres.data
-    // console.log(store)
-   
 }
+}
+getdata(1)
 
-// adding the data in table body
-
-let table=document.getElementById("table1")
-function showData(arr){
-    arr.map(function(ele){
-        let thead=document.createElement("thead")
-
-        let tr=document.createElement("tr")
-
-        let td1=document.createElement("th")
-        td1.textContent=ele.id
-
-        let td2=document.createElement("th")
-        td2.textContent=ele.name
-
-        let td3=document.createElement("th")
-        td3.textContent=ele.gender
-
-        let td4=document.createElement("td")
-        td4.textContent=ele.department
-
-        let td5=document.createElement("td")
-        td5.textContent=ele.salary
-        tr.append(td1,td2,td3,td4,td5)
-        thead.append(tr)
-        table.append(thead)
+function showData(data){
+    tbody.innerHTML = ""
+    data.map((item)=>{
+          
+        let tr = document.createElement("tr")
+        tr.innerHTML = `
+        <td>${item.id}</td>
+        <td>${item.name}</td>
+        <td>${item.gender}</td>
+        <td>${item.department}</td>
+        <td>${item.salary}</td>
+    `
+    tbody.append(tr)
     })
 }
+//pagination for next page
+button[1].addEventListener('click', function(){
+    if(count<10){
+        count+=1
+        getdata(count)
+    }else{
+        button[1].disabled   
+    }
+})
 
- fetchData("https://dbioz2ek0e.execute-api.ap-south-1.amazonaws.com/mockapi/get-employees")
+//pagination for pre page
+button[0].addEventListener('click', function(){
+    if(count>1){
+        count-=1
+        getdata(count)
+    }
+    if(count<1){
+        button[0].disabled
+        console.log(count);
+    }
+})
+
+Department.addEventListener('change', function(){
+    console.log(Department.value);
+    fetchdata(Department.value)
+})
+
+async function FetchData1(){
+    let res = await fetch("https://dbioz2ek0e.execute-api.ap-south-1.amazonaws.com/mockapi/get-employees")
+    let response = await res.json()
+    Data1 = response.data
+}
+FetchData1()
+async function fetchdata(vla){
+
+let newdata = Data1.filter((item)=>item.department==vla)
+ showData(newdata)
+}
+
+//filter by gender
+gender.addEventListener('change', function(){
+  console.log(Data1);
+
+        showData(newdata)
+    
+})
+// sort data according to salary
+Salary.addEventListener('change', function(){
+if(Salary.value=="HTL"){
+    let newdata = Data1.sort((a,b)=>b.salary-a.salary)
+    showData(newdata)
+}else if(Salary.value=="LTH"){
+    let newdata = Data1.sort((a,b)=>a.salary-b.salary)
+    showData(newdata) 
+}
+})
