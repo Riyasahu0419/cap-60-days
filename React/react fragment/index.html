@@ -13,28 +13,22 @@
     <script type="text/babel">
 
       let root = document.getElementById("root")
-    let element = ()=> (
+    let element = 
       <>  
         <p> React is a javascript library</p>
 
-        <div className="main"></div>
-        <p>Click the below button to alert 'Hello'</p>
-        <button onClick={click}>Alert Hello</button>
+        <div className="main">
+          <p>Click the below button to alert 'Hello'</p>
+          <button onClick={Click}>Alert Hello</button>
+      </div>
       </>
 
-      );
-
-      function click(){
-        alert("Hello")
-      }
+    function Click(){
+      alert("Hello")
+    }
 
       ReactDOM.createRoot(root).render(element)
-
-
-      
-
       // Your JSX code here
     </script>
   </body>
 </html>
-pt library</p>
