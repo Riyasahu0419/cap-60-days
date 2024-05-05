@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dynamic List Rendering</title>
+  <style>
+    /* *{
+      margin:0px;
+      padding:0px;
+     
+    } */
+
+      .Gallery-grid{
+        display: grid;
+        grid-template-columns: repeat(2,0fr);
+        justify-content: center;
+        margin:10px;
+
+        gap: 10px;
+      }
+      .Gallery-grid img{
+        
+        width: 500px;
+        height: 300px;
+      }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+  <script src="https://www.unpkg.com/react@18.2.0/umd/react.development.js"></script>
+  <script src="https://www.unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type="text/babel">
+
+    let root = document.getElementById("root")
+    // Your ItemList component code will go here
+    function Gallery({ children }) {
+  return (
+
+    <div className = "Gallery-grid">
+      {children}
+      </div>
+    )
+
+}
+
+let element =
+<Gallery>
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyepySmkAMcPbMf6HDzBTCoGtsuLVP7nptbQ&s" />
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRoBuMvSuYezLE9rwI-zOJeIOmcIGfDPqOvFA&s" />
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxcYDD0RHtABUO_zjAUUHZ9iEWqPO_nJPIxA&s"/>
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEPPv5yuXAqgrRuMICII1GtRveOrgASBSWdw&s"/>
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShH26OBOiVvPO_CoYRU5jX1Zf95UIrUBV6nw&s"/>
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR--ezbIfR7wOHrezjEfSvSS1U9HMm_YsqjuA&s"/>
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKuJqjh6P_dOQVqu9_MiUjHWU_wmKqthuh_w&s"/>
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToAd0mVyVBqtmRWn6S_2-TcLJv1ph6hbYFUA&s"/>
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpJZ7XQf4_1miq-ElTKKxAnZD_ugDw2RVSsA&s"/>
+  
+</Gallery>;
+
+ReactDOM.createRoot(root).render(element)
+
+
+  </script>
+</body>
+</html>
+
