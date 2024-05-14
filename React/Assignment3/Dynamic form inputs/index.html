@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Template</title>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+  <script src="https://www.unpkg.com/react@18.2.0/umd/react.development.js"></script>
+  <script src="https://www.unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type="text/babel">
+    // Your  code will go here
+    let root= document.getElementById("root")
+    let reactroot = ReactDOM.createRoot(root)
+
+    function App(){
+
+        const [message , setMsg]=React.useState([''])
+        console.log(message)
+
+
+        
+        const Addhby=(e)=>{
+          setMsg([...message ,''])
+        }
+        
+        
+        function handleChange(index,eve){
+          const newMsg=[...message]
+          newMsg[index]=eve.target.value
+          setMsg(newMsg)
+        }
+        
+        function handlerem(i){
+          const newMSg=[...message]
+          newMSg.splice(i,1)
+          setMsg(newMSg)
+        }
+
+        return (
+          <>
+          {message.map((hoby,i)=>(
+
+            <div key={i}>
+              <input 
+              // value={message}
+              placeholder = "Type a hobby"
+              onChange={(e)=>handleChange(i,e)}
+              />    
+              <button onClick={()=>handlerem(i)}>Remove</button>
+          </div>
+         ) )}
+        <button onClick={Addhby}>AddInput</button>
+        <button onClick={Addhby}>submit</button>
+
+        </>
+        
+      )
+    }
+
+reactroot.render(<App/>)
+  </script>
+</html>

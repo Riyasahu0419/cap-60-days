@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Template</title>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+  <script src="https://www.unpkg.com/react@18.2.0/umd/react.development.js"></script>
+  <script src="https://www.unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type="text/babel">
+    // Your  code will go here
+    let root= document.getElementById("root")
+   let reactroot= ReactDOM.createRoot(root)
+    function Colorpick(){
+        const[color , setColor]= React.useState("")
+
+        function handleChange(){
+            setColor(event.target.value)
+        }
+
+        
+        return(
+            <>
+            <input type="text" 
+            // value={text}
+            placeholder=" enter HEX color values"
+            onChange={handleChange}
+            />
+            
+            <div id="displa_Color" style={{
+                backgroundColor:color,
+                width : "200px",
+                height: "200px",
+                marginTop:"20px"
+
+
+            }}></div>
+            </>
+        )
+    }
+
+    reactroot.render(<Colorpick/>)
+
+  </script>
+</html>

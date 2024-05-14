@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Template</title>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+  <script src="https://www.unpkg.com/react@18.2.0/umd/react.development.js"></script>
+  <script src="https://www.unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type="text/babel">
+    // Your  code will go here
+    let root= document.getElementById("root")
+    let reactroot = ReactDOM.createRoot(root);
+
+    
+    function Todo(){
+        
+        const [todo , setTodo] = React.useState([])
+        const [newtodo,setNewtodo] = React.useState("")
+        
+        const addTodo=()=>{
+            setTodo(preValue =>[...todo , {id:Date.now(), text:newtodo , completed:false}])
+            setNewtodo("")
+        }
+        
+        // console.log(todo)
+        const toggleTodo =(id)=>{
+            setTodo(prevTodos=>
+            prevTodos.map(todo=>
+            todo.id === id?{...todo,completed:!todo.completed}:todo
+        )
+        );
+        }
+
+        const removeTodo = (id)=>{
+            setTodo(prevTodos=>prevTodos.filter(todo=>todo.id !==id))
+        }
+
+        return(
+            <div>
+                <input type="text"
+                value={newtodo}
+                onChange={(e)=> setNewtodo(e.target.value)}
+                />
+                <button onClick={addTodo}>ADD todo</button>
+                <ul>
+                    {todo.map(todos=>(
+                        <li key={todos.id}>
+                            <input type="checkbox" checked={todos.completed} onChange={()=>toggleTodo(todos.id)}/>
+                            <span>{todos.text}</span>
+                            <button onClick={()=>removeTodo(todos.id)}>Deleted</button>    
+                        </li>
+        ))}    
+                </ul>
+
+            </div>
+        )
+    }
+
+
+
+
+
+
+
+    reactroot.render(<Todo/>)
+  </script>
+</html>
