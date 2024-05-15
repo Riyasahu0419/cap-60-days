@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Template</title>
+  </head>
+  <style>
+    #dummy{
+        display:grid;
+        grid-template-columns: repeat(5,1fr);
+        margin: 20px;
+        padding: 30px;
+    }
+
+    input{
+        width: 400px;
+        height: 40px;
+        margin-left: 40%;
+        text-align: center;
+
+    }
+
+  </style>
+  <body>
+    <div id="root"></div>
+  </body>
+  <script src="https://www.unpkg.com/react@18.2.0/umd/react.development.js"></script>
+  <script src="https://www.unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type="text/babel">
+    // Your  code will go here
+    let root= document.getElementById("root")
+    let reactroot = ReactDOM.createRoot(root)
+function UserProfile(){
+    const [user,setUser]=React.useState([])
+    const [search,setSearch]=React.useState("")
+
+    async function Fetchuser(){
+        const res = await fetch("https://dummyjson.com/users")
+        const data = await res.json()
+        console.log(data)
+        setUser(data.users)
+    }
+
+    React.useEffect(function(){
+        Fetchuser()
+        
+    },[])
+    
+    const searchdata=user.filter((ele)=>{
+        return ele.firstName.toLowerCase().includes(search.toLowerCase())
+    })
+        function handleSeach(ele){
+            setSearch(ele.target.value)
+    }
+
+    
+    return(
+        <>
+        <input type="text" placeholder="search user name" onChange={handleSeach}/>
+        
+        <div id="dummy">
+            {searchdata.map((ele,i)=>{
+                return(
+                    <>
+                    <div key={i}>
+                        <img src={ele.image}/>
+                        <h3>Name:{ele.firstName}</h3>
+                        <h4>Age:{ele.age}</h4>
+                        <p>Email:{ele.email}</p>
+                        
+                        </div>
+                     </>
+                    )
+            })}
+
+
+        </div>
+        
+            </>
+    )
+}
+
+reactroot.render(<UserProfile/>)
+
+  </script>
+</html>
