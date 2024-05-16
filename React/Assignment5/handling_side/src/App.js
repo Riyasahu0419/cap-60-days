@@ -1,23 +1,81 @@
-import logo from './logo.svg';
+
+import { useEffect, useState } from 'react';
 import './App.css';
 
+function MouseTracker(){
+ useEffect(() =>{
+  const handleMouse =(event) =>{
+    console.log('Mouse X coordinate:', event.clientX);
+  };
+  document.addEventListener('mousemove', handleMouse);
+
+  return() =>{
+    document.removeEventListener('mousemove', handleMouse);
+  }
+ },[]);
+
+ return(
+  <div>
+    <h3>Mouse Tracker</h3>
+    <p>Check the console for Mouse X coordinate.</p>
+  </div>
+ )
+ 
+  
+}
+
+function DocumentUpdated(){
+  useEffect(()=>{
+    document.title = 'Document Title Updated';
+
+    return()=>{
+      document.title = 'React App';
+    };
+  },[]);
+
+  return(
+    <div>
+      <h3>Document of the Title Update</h3>
+      <p>The document can be update....</p>
+    </div>
+  )
+}
+
 function App() {
+  const [data, setData] = useState(null);
+
+useEffect(() =>{
+async function fetchdata(){
+ try {
+  let res = await fetch("https://jsonplaceholder.typicode.com/posts");
+  let data = await res.json();
+  setData(data);
+  // console.log(data)
+ } catch (error) {
+  console.log(error);
+  
+ }
+}
+fetchdata()
+},[])
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h2>React useEffect using API </h2>
+    {data ? (
+      <div>
+        {data.map((item) => (
+          <p key={item.id}>{item.id}: {item.title}</p>
+        ))}
+      </div>
+    ) : (
+      <p>Loading...</p>
+    
+
+    )}
+    <MouseTracker />
+    <DocumentUpdated />
+      
     </div>
   );
 }
