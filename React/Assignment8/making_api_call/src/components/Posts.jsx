@@ -10,24 +10,23 @@ function Posts() {
   const [error, setError] = useState(false);
 
   async function fetchAndUpdateData() {
+    
     try {
-      {
-        axios
-        .post("https://jsonplaceholder.typicode.com/posts",posts)
-        .then((res)=>{
-          setPosts(res?.data?.data)
+      
+    let res= await axios.get("https://jsonplaceholder.typicode.com/posts")
+        
+          setPosts(res?.data)
           setLoading(false)
-          // console.log(res)
-        })
+          console.log(res.data)
         
         
       }
-    } catch (error) {
+     catch (error) {
       {
         
         setError(true)
         setLoading(false)
-        // console.log(error)
+        console.log(error)
       }
     }
   }
@@ -48,7 +47,7 @@ function Posts() {
       </button>
       
       {posts?.map((post)=>(
-        <Post {...post} title={post.title} body={post.body}/>
+        <Post {...post} key={post.id}/>
 ))}
       
     </div>

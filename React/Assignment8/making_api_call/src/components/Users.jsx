@@ -9,6 +9,8 @@ function Users() {
   const [users, setUsers] = useState([]);
   const [error, setError] = useState(false);
 
+  console.log(users)
+
   async function fetchAndUpdateData() {
     setLoading(true);
     try {
