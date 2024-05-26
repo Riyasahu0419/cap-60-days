@@ -19,8 +19,11 @@ function Posts() {
         url: `https://jsonplaceholder.typicode.com/posts?_limit=10&page=${page}`,
       });
 
+      setPosts(res?.data)
       setTotalPages(Math.ceil(Number(res?.headers["x-total-count"]) / 10));
-      /*Complete the missing code*/
+      console.log(res.data)
+      setLoading(false)
+      
     } catch (error) {
       setError(true);
       setLoading(false);
@@ -28,6 +31,7 @@ function Posts() {
   }
 
   useEffect(() => {
+    fetchAndUpdateData()
     /*Complete the missing code*/
   }, [page]);
 
