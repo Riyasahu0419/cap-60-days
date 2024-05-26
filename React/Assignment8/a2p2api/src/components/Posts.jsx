@@ -19,7 +19,7 @@ function Posts() {
       {
         let res = await axios.get("https://jsonplaceholder.typicode.com/posts")
         setPosts(res?.data)
-        console.log(res?.data)
+        // console.log(res?.data)
         setLoading(false)
       }
     catch (error) {
@@ -31,7 +31,7 @@ function Posts() {
   }
 
   useEffect(()=>{
-    fetchAndUpdateData
+    fetchAndUpdateData()
   },[]);
 
   if (loading) {
