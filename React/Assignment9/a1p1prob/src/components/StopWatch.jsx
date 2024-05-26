@@ -6,6 +6,20 @@ function StopWatch() {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
+    const intervalid = setInterval(()=>{
+      setCount((prevCount)=>{
+        if(prevCount >= 10){
+          clearInterval(intervalid)
+          return prevCount
+        }
+        return prevCount+1;
+      })
+    },1000)
+
+    function cleanupFunction() {
+      clearInterval(intervalid);
+    }
+    return cleanupFunction;
     /*Complete the missing code*/
   }, []);
 

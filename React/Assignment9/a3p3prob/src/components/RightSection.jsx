@@ -2,7 +2,8 @@ import { useContext } from "react";
 import { BulbContext } from "../context/BulbContextProvider";
 
 export default function RightSection() {
-  const { isOn, switchOn, switchOff } = {
+  const { isOn, switchOn, switchOff } = useContext(BulbContext)
+  {
     /*complete the missing code*/
   };
 
@@ -14,6 +15,7 @@ export default function RightSection() {
         <button
           onClick={
             {
+              switchOn
               /*complete the missing code*/
             }
           }
@@ -23,6 +25,7 @@ export default function RightSection() {
         <button
           onClick={
             {
+              switchOff
               /*complete the missing code*/
             }
           }

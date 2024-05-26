@@ -18,6 +18,18 @@ const links = [
     label: "USERS",
   },
   {
+    to: "/courses",
+    label: "COURSES",
+  },
+  {
+    to: "/learn",
+    label: "LEARN",
+  },
+  {
+    to: "/fees",
+    label: "FEES",
+  },
+  {
     to: "/login",
     label: "LOGIN",
   },
