@@ -14,20 +14,20 @@ export default function RightSection() {
         <div className={`light-bulb ${isOn ? "on" : "off"}`}></div>
         <button
           onClick={
-            {
+            
               switchOn
               /*complete the missing code*/
-            }
+            
           }
         >
           SWITCH ON
         </button>
         <button
           onClick={
-            {
+            
               switchOff
               /*complete the missing code*/
-            }
+            
           }
         >
           SWITCH OFF
