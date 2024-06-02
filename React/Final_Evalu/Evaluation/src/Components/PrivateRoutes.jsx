@@ -1,13 +1,10 @@
-import React from 'react'
+import React, { Children } from 'react'
 
 function PrivateRoutes({children}) {
   return (
     <div>
-      {children}
-
+        {children}
     </div>
-    
-    
   )
 }
 

@@ -1,9 +1,156 @@
 {
-    "posts": [
-      { "id": 1, "title": "json-server", "author": "typicode" }
-    ],
-    "comments": [
-      { "id": 1, "body": "some comment", "postId": 1 }
-    ],
-    "profile": { "name": "typicode" }
-  }
+  "Tickets": [
+    {
+      "id": 1,
+      "Title": "Autem voluptatem doloremque sint.",
+      "Description": "Sunt molestiae repellat ut. Cum rerum quasi aut.",
+      "Assignee": "Alice Johnson",
+      "Status": "Pending",
+      "Priority": 7
+    },
+    {
+      "id": 2,
+      "Title": "Est similique quasi veritatis.",
+      "Description": "Laboriosam exercitationem facilis libero sed.",
+      "Assignee": "Bob Brown",
+      "Status": "In Progress",
+      "Priority": 4
+    },
+    {
+      "id": 3,
+      "Title": "Quisquam et ullam aut.",
+      "Description": "Doloribus ex aspernatur id. Nihil modi est reprehenderit.",
+      "Assignee": "Charlie Davis",
+      "Status": "Completed",
+      "Priority": 1
+    },
+    {
+      "id": 4,
+      "Title": "Reprehenderit iure magni.",
+      "Description": "Saepe nihil culpa ipsum. Nemo iure rerum voluptatum.",
+      "Assignee": "David Evans",
+      "Status": "Pending",
+      "Priority": 9
+    },
+    {
+      "id": 5,
+      "Title": "Officiis ut dolore sunt.",
+      "Description": "Accusantium mollitia asperiores quo. Similique illum suscipit consequatur.",
+      "Assignee": "Evelyn Foster",
+      "Status": "In Progress",
+      "Priority": 2
+    },
+    {
+      "id": 6,
+      "Title": "Id natus dolore molestias. hghfhgfhfhfggggggggggggggggggggv",
+      "Description": "Consequuntur autem consequatur doloremque. Quisquam sint tempore natus.",
+      "Assignee": "Alice Johnson",
+      "Status": "Completed",
+      "Priority": 5
+    },
+    {
+      "id": 7,
+      "Title": "Repellendus minus eos.",
+      "Description": "Dignissimos doloribus dolor accusamus. Ipsum eligendi sit voluptatem.",
+      "Assignee": "Bob Brown",
+      "Status": "Pending",
+      "Priority": 8
+    },
+    {
+      "id": 8,
+      "Title": "Similique adipisci sit.",
+      "Description": "Eius saepe nemo tempora. Architecto quis quo non.",
+      "Assignee": "Charlie Davis",
+      "Status": "In Progress",
+      "Priority": 6
+    },
+    {
+      "id": 9,
+      "Title": "Illum sed voluptas.",
+      "Description": "Commodi exercitationem repellendus rerum. Odio veniam et voluptatem.",
+      "Assignee": "David Evans",
+      "Status": "Completed",
+      "Priority": 3
+    },
+    {
+      "id": 10,
+      "Title": "Vel consectetur expedita.",
+      "Description": "Rerum omnis voluptatem suscipit. Magni autem quo officiis.",
+      "Assignee": "Evelyn Foster",
+      "Status": "Pending",
+      "Priority": 0
+    },
+    {
+      "id": 11,
+      "Title": "Pariatur atque consequatur.",
+      "Description": "Doloribus reiciendis officiis consequatur. Quo dolorem adipisci et.",
+      "Assignee": "Alice Johnson",
+      "Status": "In Progress",
+      "Priority": 6
+    },
+    {
+      "id": 12,
+      "Title": "Sit reiciendis aut.",
+      "Description": "Corporis id sunt culpa. Atque aut consequatur fugit.",
+      "Assignee": "Bob Brown",
+      "Status": "Completed",
+      "Priority": 1
+    },
+    {
+      "id": 13,
+      "Title": "Aut et aut.",
+      "Description": "Neque quasi sunt eveniet. Est aut et expedita.",
+      "Assignee": "Charlie Davis",
+      "Status": "Pending",
+      "Priority": 4
+    },
+    {
+      "id": 14,
+      "Title": "Accusantium quis.",
+      "Description": "Iusto distinctio aperiam suscipit. Totam omnis iste magnam.",
+      "Assignee": "David Evans",
+      "Status": "In Progress",
+      "Priority": 7
+    },
+    {
+      "id": 15,
+      "Title": "Consequatur illum.",
+      "Description": "Fugit id veniam sed. Eaque fuga quis qui.",
+      "Assignee": "Evelyn Foster",
+      "Status": "Completed",
+      "Priority": 2
+    },
+    {
+      "Title": "something went",
+      "Description": "bsdsgdbdhsgdmnsbdsgdjhsbdh",
+      "Assignee": "Bob Brown",
+      "Status": "Progress",
+      "Priority": "2",
+      "id": 18
+    },
+    {
+      "Title": "fdf",
+      "Description": "dfdf",
+      "Assignee": "Charlie Davis",
+      "Status": "Completed",
+      "Priority": "2",
+      "id": 19
+    },
+    {
+      "Title": "Abhi",
+      "Description": "dsds kjhhkjhkj",
+      "Assignee": "David Evans",
+      "Status": "Completed",
+      "Priority": "9",
+      "id": 20
+    },
+    {
+      "Title": "sasas",
+      "Description": "sasasasasasasa",
+      "Assignee": "Charlie Davis",
+      "Status": "Completed",
+      "Priority": "9",
+      "id": 21
+    }
+  ]
+}

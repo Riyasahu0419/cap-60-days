@@ -5,6 +5,8 @@ import Contact from '../Pages/Contact'
 import Tickets from '../Pages/Tickets'
 import Login from '../Pages/Login'
 import PrivateRoutes from './PrivateRoutes'
+import TextCreate from '../Pages/TextCreate'
+import TicketView from '../Pages/TicketView'
 
 
 
@@ -12,7 +14,7 @@ function AllRoutes() {
   return (
     
     <Routes>
-        <Route path="//" element={
+        <Route path="/" element={
           <PrivateRoutes>
             <Home/>
           </PrivateRoutes>
@@ -34,7 +36,17 @@ function AllRoutes() {
         }/>
         <Route path="/login" element={
         <Login/>
-        }/>
+      }/>
+
+      <Route path="/tickets/createTicket" element={
+      <TextCreate/>}/>
+
+      <Route path="/tickets/viewticket/:id" element={
+      <TicketView/>}/>
+
+      <Route path="/login" element={
+      <Login/>}/>
+
       
       
 
